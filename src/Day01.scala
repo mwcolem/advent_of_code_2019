@@ -3,8 +3,6 @@ import scala.io.Source
 object Day01 extends App {
   trait Part {
     def calculateFuel(mass: Int) : Int
-
-    def calculateTotalFuel(masses: Seq[Int]): Int = masses.map(calculateFuel).sum
   }
 
   object Part1 extends Part {
@@ -12,7 +10,6 @@ object Day01 extends App {
   }
 
   object Part2 extends Part {
-
     override def calculateFuel(mass: Int): Int = {
       Part1.calculateFuel(mass) match {
         case fuel if fuel <= 0 => 0
@@ -31,8 +28,4 @@ object Day01 extends App {
       .map(Part2.calculateFuel)
       .sum
   )
-
-//  mass.foreach( singleMass =>
-//    println(Part2.calculateFuel(singleMass))
-//  )
 }
