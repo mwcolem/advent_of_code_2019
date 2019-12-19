@@ -25,6 +25,12 @@ object Day01 extends App {
 
   println(
     masses
+      .map(Part1.calculateFuel)
+      .sum
+  )
+
+  println(
+    masses
       .map(Part2.calculateFuel)
       .sum
   )
